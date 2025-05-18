@@ -147,7 +147,6 @@ main {
     margin-top: 20px;
 }
 
-/* Styles for Menu Page */
 .menu-page-layout {
     display: flex;
     gap: 30px;
@@ -171,7 +170,6 @@ main {
     text-align: center;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .menu-item img {
@@ -263,17 +261,17 @@ main {
     border-bottom: 1px solid #f9aa75; 
     display: flex;
     align-items: center;
-    cursor: pointer; /* Змінює курсор на "руку" при наведенні */
+    cursor: pointer; 
     transition: background-color 0.2s ease;
     border-radius: 3px;
 }
 
 .menu-sidebar ul li:hover,
-.menu-sidebar ul li:focus { /* Стиль для hover та focus */
+.menu-sidebar ul li:focus { 
     background-color: #FEE5C9; 
-    outline: none; /* Забирає стандартний контур фокусу, якщо ви його не хочете */
+    outline: none; 
 }
-.menu-sidebar ul li:focus-visible { /* Кращий контур фокусу для доступності */
+.menu-sidebar ul li:focus-visible { 
     outline: 2px solid #c75c00;
     outline-offset: 2px;
 }
@@ -289,7 +287,7 @@ main {
     height: 20px;
     border-radius: 50%;
     margin-right: 12px;
-    background-color: #9d0a0f; /* Завжди червоний фон */
+    background-color: #9d0a0f; 
     position: relative;
     flex-shrink: 0;
 }
@@ -305,7 +303,6 @@ main {
     transform: translate(-50%, -50%);
 }
 
-/* Styles for Map Page */
 .map-content-wrapper {
     text-align: center;
 }
