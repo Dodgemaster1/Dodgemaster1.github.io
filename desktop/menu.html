@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ознайомтеся з нашим меню - Потуга Смаку">
+    <title>Меню - Потуга Смаку</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+One&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="resources/icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">ПОТУГА Смаку</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="menu.html" class="active">Меню</a></li>
+                    <li><a href="map.html">Карта</a></li>
+                    <li><a href="#">Про нас</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="menu-page-layout">
+                <div class="menu-content">
+                    <div class="menu-items-grid">
+                        <div class="menu-item">
+                            <img src="resources/pizza.png" alt="Пепероні">
+                            <h3>Пепероні</h3>
+                            <p>200 грн / шт</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="resources/fries.png" alt="Картошка фрі">
+                            <h3>Картошка фрі</h3>
+                            <p>100 грн / 50 г</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="resources/dumplings.png" alt="Вареники">
+                            <h3>Вареники</h3>
+                            <p>150 грн / 200 г</p>
+                        </div>
+                        <div class="menu-item">
+                            <img src="resources/borsch.png" alt="Борщ">
+                            <h3>Борщ</h3>
+                            <p>150 грн / 150 г</p>
+                        </div>
+                    </div>
+                    <nav class="pagination">
+                        <ul>
+                            <li><a href="#" class="active">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <aside class="menu-sidebar">
+                    <h2>Розділи:</h2>
+                    <ul>
+                        <li data-category="main-courses" role="button" tabindex="0">
+                            <span class="category-icon"></span>Основні страви
+                        </li>
+                        <li data-category="appetizers" role="button" tabindex="0">
+                            <span class="category-icon"></span>Закуски
+                        </li>
+                        <li data-category="borscht" role="button" tabindex="0">
+                            <span class="category-icon checked"></span>Борщі
+                        </li>
+                        <li data-category="pizza" role="button" tabindex="0">
+                            <span class="category-icon checked"></span>Піца
+                        </li>
+                        <li data-category="fastfood" role="button" tabindex="0">
+                            <span class="category-icon checked"></span>Фастфуд
+                        </li>
+                        <li data-category="sushi" role="button" tabindex="0">
+                            <span class="category-icon"></span>Суші
+                        </li>
+                        <li data-category="desserts" role="button" tabindex="0">
+                            <span class="category-icon"></span>Десерти
+                        </li>
+                        <li data-category="drinks" role="button" tabindex="0">
+                            <span class="category-icon"></span>Напої
+                        </li>
+                        <li data-category="sauces" role="button" tabindex="0">
+                            <span class="category-icon"></span>Соуси
+                        </li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Потуга Смаку. Всі права захищені.</p>
+            <p>Розроблено з любов'ю до української кухні.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryItems = document.querySelectorAll('.menu-sidebar ul li');
+
+            categoryItems.forEach(item => {
+                if (!item.hasAttribute('tabindex')) {
+                    item.setAttribute('tabindex', '0');
+                }
+                if (!item.hasAttribute('role')) {
+                    item.setAttribute('role', 'button');
+                }
+
+
+                item.addEventListener('click', function() {
+                    const icon = this.querySelector('.category-icon');
+                    if (icon) {
+                        icon.classList.toggle('checked');
+                    }
+                    const category = this.dataset.category;
+                    const isSelected = icon ? icon.classList.contains('checked') : false;
+                    console.log("Категорія:", category, "Обрано:", isSelected);
+                });
+
+                item.addEventListener('keydown', function(event) {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
